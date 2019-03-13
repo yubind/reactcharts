@@ -18,17 +18,17 @@ class App extends Component {
   getChartData() {
     this.setState({
         chartData : {
-            labels : ['Boston', 'Worcester', 'SpringField', 'Lowell', 'Cambridge', 'New Bedford'],
+            labels : ['Portland', 'Salem', 'Eugene', 'Gresham', 'Hillsboro', 'Bend'],
             datasets : [
                 {
                     label : 'Population',
                     data : [
-                        617594,
-                        181045,
-                        153060,
-                        106519,
-                        105162,
-                        95072
+                        667589,
+                        177019,
+                        175803,
+                        114835,
+                        112427,
+                        103962
                     ],
                     backgroundColor : [
                         'rgba(170, 125, 121, 0.6)',
