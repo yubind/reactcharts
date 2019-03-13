@@ -5,32 +5,14 @@ class Chart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            chartData : {
-                labels : ['Boston', 'Worcester', 'SpringField', 'Lowell', 'Cambridge', 'New Bedford'],
-                datasets : [
-                    {
-                        label : 'Population',
-                        data : [
-                            617594,
-                            181045,
-                            153060,
-                            106519,
-                            105162,
-                            95072
-                        ],
-                        backgroundColor : [
-                            'rgba(170, 125, 121, 0.6)',
-                            'rgba(188, 154, 156, 0.6)',
-                            'rgba(169, 109, 163, 0.6)',
-                            'rgba(122, 89, 128, 0.6)',
-                            'rgba(59, 59, 88, 0.6)',
-                            'rgba(144, 149, 144, 0.6)',
-                            'rgba(142, 74, 73, 0.6)'
-                        ]
-                    }
-                ]
-            }
+            chartData : props.chartData
         }
+    }
+
+    static defaultProps = {
+        displayTitle : true,
+        displayLegend : true,
+        legendPosition : 'bottom'
     }
 
     render() {
@@ -38,7 +20,17 @@ class Chart extends Component {
             <div className="chart">
                 <Bar 
                     data={this.state.chartData}
-                    options={{}}
+                    options={{
+                        title : {
+                            display: this.props.displayTitle,
+                            text: 'Largest Cities In Massachusetts',
+                            fontSize : 25
+                        },
+                        legend : {
+                            display: this.props.displayLegend,
+                            position: this.props.legendPosition
+                        }
+                    }}
                 />
             </div>
         )
